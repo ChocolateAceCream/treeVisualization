@@ -9,24 +9,28 @@
   <select v-model="treeType">
     <option value="binary">binary tree</option>
     <option value="b_tree">b tree</option>
+    <option value="black_red_tree">black red tree</option>
   </select>
   <BinaryTree v-if="treeType === 'binary'">
   </BinaryTree>
   <BTree v-if="treeType === 'b_tree'"></BTree>
+  <BlackRedTree v-if="treeType === 'black_red_tree'"></BlackRedTree>
 </template>
 
 <script>
 import { defineComponent, toRefs, reactive } from 'vue'
 import BinaryTree from './BinaryTree.vue'
 import BTree from './BTree.vue'
+import BlackRedTree from './BlackRedTree.vue'
 export default defineComponent({
   components: {
     BinaryTree,
     BTree,
+    BlackRedTree
   },
   setup(props, ctx) {
     const state = reactive({
-      treeType: 'b_tree',
+      treeType: 'black_red_tree',
     })
     return {
       ...toRefs(state)

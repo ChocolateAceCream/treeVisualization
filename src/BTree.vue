@@ -130,9 +130,7 @@ export default {
           h('button', { style: "margin-left: 10px;", onClick: onInsert }, ['insert']),
         ]),
       ])
-      console.log('-----tree.value---', tree.value)
       let child = iterator(tree.value)
-      console.log('-----child---', child)
 
       let t = h('ul', child)
       root.children.push(h('div', { class: 'tree' }, [t]))
